@@ -2,16 +2,6 @@
 @use "../mixins.scss";
 
 .about-hero {
-    &-inner {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .sub-heading {
-        color: $dark;
-    }
-
     padding-top: 73px;
     padding-bottom: 100px;
     background: $yellow-light;
@@ -31,42 +21,363 @@
         padding-bottom: 40px;
     }
 
-    .page-heading {
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    &-sub-heading {
+        color: $dark;
+    }
+
+    &-page-heading {
         font-family: $roboto-slab-font;
         color: $dark;
         font-weight: 800;
         font-size: 6rem;
         line-height: 1.17;
         margin-top: 12px;
+        max-width: 670px;
 
         @include mixins.screen(xxl) {
             font-size: 5.2rem;
-            max-width: 500px;
         }
         @include mixins.screen(xl) {
             font-size: 4.2rem;
-            max-width: 350px;
+            max-width: 600px;
         }
 
         @include mixins.screen(lg) {
             font-size: 4.2rem;
-            max-width: 450px;
         }
 
         @include mixins.screen(sm) {
             font-size: 3.5rem;
-            max-width: 335px;
             margin-top: 6px;
         }
     }
+
     &-desc {
         margin-top: 18px;
+        max-width: 670px;
+        color: $dark;
+        line-height: 1.67;
 
         @include mixins.screen(xl) {
             margin-top: 14px;
+            max-width: 600px;
         }
         @include mixins.screen(sm) {
             margin-top: 9px;
         }
+    }
+}
+
+// ========== Story ===========
+
+.about-story {
+    padding-top: 150px;
+    background: $white;
+
+    @include mixins.screen(xl) {
+        padding-top: 120px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 90px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 50px;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    &-content {
+        max-width: 469px;
+        @include mixins.screen(lg) {
+            max-width: 100%;
+        }
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+        margin-bottom: 18px;
+
+        @include mixins.screen(xl) {
+            margin-bottom: 10px;
+        }
+
+        @include mixins.screen(lg) {
+            margin-bottom: 20px;
+        }
+        @include mixins.screen(sm) {
+            margin-bottom: 13px;
+        }
+    }
+
+    &-desc:not(:last-child) {
+        margin-bottom: 30px;
+
+        @include mixins.screen(xl) {
+            margin-bottom: 15px;
+        }
+
+        @include mixins.screen(lg) {
+            margin-bottom: 25px;
+        }
+
+        @include mixins.screen(sm) {
+            margin-bottom: 21px;
+        }
+    }
+
+    &-media {
+        position: relative;
+        @include mixins.screen(xxl) {
+            margin-left: 7%;
+        }
+    }
+
+    &-img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+        vertical-align: bottom;
+    }
+
+    &-decor {
+        width: 3.5%;
+        height: 38.5%;
+        aspect-ratio: 1 / 11;
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &-mask {
+        width: 20%;
+        height: 27.7%;
+        aspect-ratio: 57 / 79;
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        bottom: 19.3%;
+        left: -10%;
+    }
+}
+
+// =========Gallery========
+
+.about-gallery {
+    padding-top: 150px;
+    padding-bottom: 70px;
+    text-align: center;
+
+    @include mixins.screen(xl) {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 50px;
+        padding-bottom: 40px;
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+    }
+
+    &-desc {
+        margin: 18px auto 70px;
+        max-width: 470px;
+
+        @include mixins.screen(xl) {
+            margin: 18px auto 50px;
+            max-width: 440px;
+        }
+
+        @include mixins.screen(md) {
+            margin: 14px auto 40px;
+            max-width: 380px;
+        }
+
+        @include mixins.screen(sm) {
+            margin: 10px auto 30px;
+            max-width: 335px;
+        }
+    }
+    &-img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 39 / 19;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &-dot-wrapper {
+        margin-top: 55px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+
+        @include mixins.screen(sm) {
+            margin-top: 40px;
+        }
+    }
+
+    &-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $dark;
+
+        &-active {
+            background: $orange;
+        }
+    }
+}
+
+// =========Stats==========
+
+.about-stats {
+    &-inner {
+        color: $dark;
+        padding-top: 55px;
+        padding-bottom: 57px;
+        background: $yellow;
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+
+        @include mixins.screen(lg) {
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        @include mixins.screen(md) {
+            padding-top: 45px;
+            padding-bottom: 45px;
+        }
+
+        @include mixins.screen(sm) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+
+    &-group {
+        text-align: center;
+    }
+
+    &-number {
+        font-family: $roboto-slab-font;
+        font-size: 6rem;
+        font-weight: 800;
+        line-height: 1.17;
+    }
+
+    &-label {
+        font-size: 1.6rem;
+        line-height: 1.75;
+
+        @include mixins.screen(sm) {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// =========== Video ============
+
+.about-video {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    text-align: center;
+
+    @include mixins.screen(xl) {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+    }
+
+    &-desc {
+        margin: 18px auto 70px;
+        max-width: 470px;
+
+        @include mixins.screen(xl) {
+            margin: 18px auto 50px;
+            max-width: 440px;
+        }
+
+        @include mixins.screen(md) {
+            margin: 14px auto 40px;
+            max-width: 380px;
+        }
+
+        @include mixins.screen(sm) {
+            margin: 13px auto 30px;
+            max-width: 335px;
+        }
+    }
+    &-thumb-wrapper {
+        position: relative;
+    }
+
+    &-img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 39 / 19;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &-btn {
+        position: absolute;
+        display: block;
+        aspect-ratio: 1 / 1;
+        width: 8.57%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-play-icon {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
     }
 }
