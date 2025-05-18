@@ -1,0 +1,52 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.sub-heading {
+    font-family: $roboto-slab-font;
+    font-size: 1.8rem;
+    line-height: 1.67;
+
+    @include mixins.screen(xl) {
+        font-size: 1.6rem;
+    }
+
+    @include mixins.screen(sm) {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+.section-heading {
+    font-family: $roboto-slab-font;
+    font-size: 4.2rem;
+    line-height: 1.24;
+
+    @include mixins.screen(xl) {
+        font-size: 3.8rem;
+    }
+    @include mixins.screen(lg) {
+        font-size: 3rem;
+    }
+
+    @include mixins.screen(sm) {
+        font-size: 2.4rem;
+    }
+}
+
+.desc {
+    font-size: 1.8rem;
+    line-height: 1.67;
+
+    @include mixins.screen(xl) {
+        font-size: 1.6rem;
+    }
+
+    @include mixins.screen(lg) {
+        font-size: 1.4rem;
+    }
+
+    @include mixins.screen(sm) {
+        font-size: 1.2rem;
+        line-height: 1.7;
+    }
+}

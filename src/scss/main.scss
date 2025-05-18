@@ -1,19 +1,25 @@
 @use "./reset";
+@use "./variables" as *;
+@use "./mixins.scss";
 
 // Layout
 @use "./layout/grid";
 @use "./layout/header";
+@use "./layout/teams";
+@use "./layout/awards";
+@use "./layout/cta";
 @use "./layout/footer";
 
-// pages
-@use "./pages/about.scss";
-@use "./pages/contact.scss";
-
 // components
-
+@use "./components/logo";
+@use "./components/text";
 @use "./components/buttons";
 @use "./components/forms";
 
+// pages
+@use "./pages/home.scss";
+@use "./pages/about.scss";
+@use "./pages/contact.scss";
 
 // Common
 
@@ -21,242 +27,66 @@
 ::before,
 ::after {
     box-sizing: border-box;
-  }
-
-:root {
-  --heading-font: "Roboto Slab", serif;
-  --black: #000;
-  --white: #fff;
-  --yellow-Light: #F8EBC9;
-  --primary: #0E1412;
-  --secondary: #FD6038;
 }
 
-h1,
+h1 {
+    font-weight: 800;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font);
-
-}
-
-
-
-.section-heading {
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 4.2rem;
-  line-height: 1.24;
+    font-weight: 700;
 }
 
 b,
 strong {
-  font-weight: bold;
+    font-weight: 700;
 }
 
 i,
 em {
-  font-style: italic;
+    font-style: italic;
 }
 
 html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-size: 1.8rem;
-  font-family: "Manrope", sans-serif;
-  font-weight: 400;
+    font-family: $manrope-font;
+    color: $grey;
+    font-size: 1.8rem;
+    font-weight: 400;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-}
-
+a,
+img,
 input,
 button,
 textarea,
 select {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  background: none;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
 }
-
-.btn {
-  color: var(--white);
-  text-align: center;
-  font-weight: 600;
-  line-height: 60px; 
-  padding: 0 35px;  
-  cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.desc {
-  line-height: 1.67;
-}
-
-/* ========== Header ========== */
 
 .container {
-  border: 1px solid red;
-}
-
-.header {
-  background: var(--yellow-Light);
-}
-
-.header {
-  padding-top: 30px;
-  font-size: 1.6rem;
-  min-height: 67px;
-}
-
-.logo-wrapper {
-  max-width: 84px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header .logo {
-  width: 31px;
-  height: 31px;
-  object-fit: cover;
-}
-
-.brand-identity {
-  color: var(--primary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 32px;
-
-}
-
-.brand-identity .brand-name {
-  font-weight: 700;
-  font-size: 2.4rem;
-}
-
-.brand-identity .tagline {
-  font-size: 1.4rem;
-}
-
-.nav-list {
-  display: flex;
-}
-
-.nav-item {
-    position: relative;
-}
-
-.nav-link {
-  display: inline-block;
-  padding: 0 25px;
-  line-height: 67px;
-  transition: color 0.3s ease-in-out;
-}
-
-.nav-list .nav-item:not(:nth-child(4)) .nav-link::after {
-  content: "\f078";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 600;
-  font-size: 1rem;
-  position: absolute;
-  top: 0;
-  right: 12px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.nav-link:hover {
-  color: var(--secondary);
-}
-
-.nav-link:hover::after {
-  transform: rotate(180deg);
-}
-
-.call {
-  text-align: right;
-}
-
-.phone-link {
-  line-height: 67px;
-  font-weight: 700;
-  font-size: 2.2rem;
-}
-
-/* ========== Header Content ========== */
-
-.hero {
-  padding-top: 154px;
-  background: var(--yellow-Light);
-}
-
-.page-heading {
-  color: var(--primary);
-  font-weight: 800;
-  font-size: 6rem;
-  line-height: 1.17;
-  margin-top: 12px;
-}
-
-.hero .desc {
-  max-width: 470px;
-  margin-top: 18px;
-}
-
-.hero-media {
-    width: 470px;
-    height: 476px;
-    background-clip: content-box;
-    background-image: url(../image/img-hero-media.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-left: 70px solid #FED464;
-    border-right: 70px solid #017848;
-    position: relative;
-}
-
-.hero-media::before {
-  content: "";
-  width: 70px;
-  height: 54px;
-  background: #017848;
-  position: absolute;
-  top: 0;
-  left: -70px;
-}
-
-.hero-media::after {
-  content: "";
-  width: 164px;
-  height: 128px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  background-image: url(../image/mask-1.svg);
-  top: 111px;
-  left: 330px;
+    border: 1px solid red;
+    @include mixins.screen(sm) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }

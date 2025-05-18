@@ -1,0 +1,273 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.header {
+    background: $yellow-light;
+    color: $dark;
+    padding-top: 30px;
+    font-size: 1.6rem;
+
+    @include mixins.screen(sm) {
+        padding-top: 10px;
+    }
+
+    .inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        @include mixins.screen(xl) {
+            justify-content: space-between;
+        }
+    }
+}
+
+.menu-toggle {
+    display: none;
+    padding: 20px;
+    margin-left: -20px;
+    cursor: pointer;
+
+    @include mixins.screen(md) {
+        display: block;
+    }
+
+    .icon {
+        display: inline-block;
+        width: 18px;
+        height: 16px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.navbar {
+    margin-left: auto;
+    margin-right: 93px;
+    @include mixins.screen(xl) {
+        margin-right: auto;
+    }
+    @include mixins.screen(lg) {
+        margin-left: -20px;
+    }
+}
+
+.nav-list {
+    display: flex;
+
+    @include mixins.screen(md) {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        max-height: 300px;
+        overflow-y: auto;
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1, 0);
+        transform-origin: 100% 0%;
+        transition-property: visibility, opacity, transform;
+        transition-duration: 0.4s;
+        transition-timing-function: ease-in-out;
+    }
+
+    .item {
+        position: relative;
+
+        &-active {
+            color: $orange;
+        }
+
+        @include mixins.screen(md) {
+            width: 100%;
+            border-top: 0.5px solid $white;
+        }
+
+        &:nth-child(3) .link::after,
+        &:nth-child(5) .link::after {
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            font-size: 1rem;
+            position: absolute;
+            top: 0;
+            right: 12px;
+            transition: transform 0.3s ease-in-out;
+
+            @include mixins.screen(lg) {
+                right: 6px;
+            }
+            @include mixins.screen(md) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            color: $orange;
+        }
+
+        &:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+
+            @include mixins.screen(md) {
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+            }
+        }
+
+        &:hover .link::after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.menu-line {
+    @include mixins.screen(md) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $orange;
+    }
+
+    .arrow-toggle {
+        display: none;
+
+        @include mixins.screen(md) {
+            display: inline-block;
+            line-height: 45px;
+            padding: 0 26px;
+            border-left: 0.5px solid $white;
+            color: $white;
+            font-weight: 600;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+    }
+
+    .link {
+        display: inline-block;
+        padding: 0 26px;
+        line-height: 67px;
+        transition: color 0.3s ease-in-out;
+
+        @include mixins.screen(lg) {
+            padding: 0 20px;
+        }
+
+        @include mixins.screen(md) {
+            width: 100%;
+            line-height: 45px;
+            color: $white;
+            font-weight: 600;
+        }
+    }
+}
+
+.nav-toggle:checked ~ .navbar > .nav-list {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.arrow-toggle {
+    display: none;
+    @include mixins.screen(md) {
+        display: block;
+    }
+}
+
+.submenu {
+    position: absolute;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: $grey;
+    z-index: 999;
+    left: 0;
+    top: 65px;
+    min-width: 185px;
+    background: $white;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1, 0);
+    transform-origin: 100% 0%;
+    transition-property: visibility, opacity, transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+
+    @include mixins.screen(md) {
+        opacity: 0;
+        visibility: hidden;
+        position: static;
+        display: none;
+        flex-direction: column;
+        transform: none;
+    }
+
+    .sub-item {
+        position: relative;
+
+        .sub-link {
+            display: inline-block;
+            width: 100%;
+            padding: 0 12px;
+            line-height: 40px;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+
+    .sub-practice {
+        &:not(:first-child) .sub-link::after {
+            content: "\f054";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 40px;
+            position: absolute;
+            top: 0;
+            right: 12px;
+        }
+    }
+}
+
+@include mixins.screen(md) {
+    .submenu-toggle:checked + .menu-line + .submenu {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .submenu-toggle:checked + .menu-line .arrow-toggle {
+        transform: rotate(180deg);
+    }
+}
+
+.call {
+    @include mixins.screen(sm) {
+        font-size: 1rem;
+    }
+
+    .link {
+        line-height: 67px;
+        font-weight: 700;
+        font-size: 2.2rem;
+
+        @include mixins.screen(lg) {
+            line-height: 20px;
+            font-size: 1.8rem;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 1.2rem;
+        }
+    }
+}

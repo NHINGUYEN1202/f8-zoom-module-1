@@ -1,0 +1,988 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+/* ========== Hero ========== */
+
+.hero {
+    padding-top: 145px;
+    padding-bottom: 141px;
+    background: $yellow-light;
+
+    @include mixins.screen(xl) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    @include mixins.screen(lg) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 32px;
+        padding-bottom: 30px;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    .content {
+        font-family: $manrope-font;
+        color: $dark;
+    }
+
+    .page-heading {
+        font-family: $roboto-slab-font;
+        color: $dark;
+        font-weight: 800;
+        font-size: 6rem;
+        line-height: 1.17;
+        margin-top: 12px;
+
+        @include mixins.screen(xxl) {
+            font-size: 5.2rem;
+            max-width: 500px;
+        }
+        @include mixins.screen(xl) {
+            font-size: 4.2rem;
+            max-width: 350px;
+        }
+
+        @include mixins.screen(lg) {
+            font-size: 4.2rem;
+            max-width: 450px;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 3.5rem;
+            max-width: 335px;
+            margin-top: 10px;
+        }
+    }
+    &-desc {
+        max-width: 470px;
+        margin-top: 18px;
+        margin-bottom: 38px;
+
+        @include mixins.screen(xl) {
+            max-width: 380px;
+            margin-bottom: 28px;
+        }
+        @include mixins.screen(sm) {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            max-width: 276px;
+        }
+    }
+    .media {
+        max-width: 470px;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        @include mixins.screen(xxl) {
+            margin-left: -20%;
+        }
+
+        @include mixins.screen(lg) {
+            max-width: 100%;
+            margin-left: -28px;
+            margin-top: 140px;
+        }
+
+        @include mixins.screen(sm) {
+            margin-top: 76px;
+            margin-left: 20px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15%;
+            height: 11.4%;
+            background-color: $green;
+            z-index: 2;
+        }
+
+        .play-icon {
+            width: 39.2%;
+            height: 39.2%;
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            z-index: 2;
+        }
+
+        .img {
+            width: 100%;
+            max-height: 100%;
+            aspect-ratio: 1 / 1;
+            background-image: url(/assets/images/img-hero-media.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                height: 100%;
+                z-index: 1;
+            }
+
+            &::before {
+                left: 0;
+                width: 15%;
+                background-color: $yellow;
+            }
+
+            &::after {
+                right: 0;
+                width: 15%;
+                background-color: $green;
+            }
+        }
+
+        .mask {
+            width: 35%;
+            height: 27%;
+            position: absolute;
+            top: 25%;
+            right: -20%;
+            z-index: 2;
+        }
+    }
+}
+
+/* ========== About ========== */
+
+.about {
+    padding: 100px 0;
+    background: $dark;
+
+    @include mixins.screen(xl) {
+        padding: 80px 0;
+    }
+
+    @include mixins.screen(md) {
+        padding: 50px 0;
+    }
+
+    @include mixins.screen(sm) {
+        padding: 30px 0;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    .media {
+        position: relative;
+
+        @include mixins.screen(md) {
+            display: none;
+        }
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+        vertical-align: bottom;
+    }
+
+    .decor {
+        width: 3.5%;
+        height: 38.5%;
+        aspect-ratio: 1 / 11;
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .mask {
+        width: 20%;
+        height: 28%;
+        aspect-ratio: 57 / 79;
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        right: -10%;
+        bottom: 19%;
+    }
+
+    .content {
+        @include mixins.screen(lg) {
+            margin-left: 15px;
+        }
+    }
+
+    &-sub-heading {
+        color: $orange;
+    }
+
+    &-heading {
+        color: $white;
+        margin-top: 6px;
+
+        @include mixins.screen(md) {
+            margin-top: 10px;
+        }
+    }
+
+    &-desc {
+        color: $grayish-light;
+        margin-top: 18px;
+
+        @include mixins.screen(lg) {
+            margin-top: 10px;
+        }
+
+        @include mixins.screen(md) {
+            margin-top: 15px;
+        }
+    }
+
+    .stats {
+        display: flex;
+        gap: 55px;
+        margin: 28px 0 40px;
+
+        @include mixins.screen(lg) {
+            gap: 30px;
+            margin: 15px 0 20px;
+        }
+
+        @include mixins.screen(md) {
+            gap: 38px;
+            margin: 15px 0 32px;
+        }
+
+        .number {
+            font-family: $roboto-slab-font;
+            color: $white;
+            font-size: 2.4rem;
+            line-height: 1.4;
+
+            @include mixins.screen(lg) {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+
+            @include mixins.screen(md) {
+                font-size: 1.7rem;
+                line-height: 1.4;
+            }
+        }
+        .label {
+            font-size: 1.6rem;
+            color: $grayish-light;
+            line-height: 1.75;
+
+            @include mixins.screen(lg) {
+                font-size: 1.4rem;
+                line-height: 1.5;
+            }
+
+            @include mixins.screen(md) {
+                font-size: 1.2rem;
+                line-height: 1.75;
+            }
+        }
+    }
+}
+
+/* ========== Services ========== */
+
+.services {
+    padding-top: 150px;
+    text-align: center;
+
+    @include mixins.screen(xl) {
+        padding-top: 120px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 90px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 50px;
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+    }
+
+    &-desc {
+        margin: 18px auto 70px;
+        max-width: 470px;
+
+        @include mixins.screen(xl) {
+            margin: 18px auto 60px;
+            max-width: 440px;
+        }
+
+        @include mixins.screen(md) {
+            margin: 14px auto 50px;
+            max-width: 380px;
+        }
+
+        @include mixins.screen(sm) {
+            margin: 10px auto 40px;
+            max-width: 335px;
+        }
+    }
+
+    .service-item {
+        position: relative;
+    }
+
+    .thumb-wrapper {
+        display: block;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+    }
+
+    .thumb {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        transition-property: opacity, transform;
+        transition-duration: 0.4s;
+        transition-timing-function: ease-in-out;
+
+        &:hover {
+            opacity: 0.8;
+            transform: scale3D(1.1, 1.1, 1);
+        }
+    }
+    .title {
+        width: 89%;
+        height: 19.5%;
+
+        background: $white;
+        color: $dark;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        transition-property: opacity, color, background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+
+        &:hover {
+            color: $white;
+            background: $orange;
+            opacity: 0.9;
+        }
+    }
+
+    .link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ========== Features ========== */
+
+.features-1 {
+    padding-top: 150px;
+    background: $white;
+
+    @include mixins.screen(xl) {
+        padding-top: 120px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 90px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 50px;
+    }
+
+    .row {
+        align-items: center;
+
+        @include mixins.screen(md) {
+            flex-wrap: wrap-reverse;
+        }
+    }
+
+    .media {
+        position: relative;
+        border: 1px solid black;
+
+        @include mixins.screen(xxl) {
+            margin-left: 7%;
+        }
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+        vertical-align: bottom;
+    }
+
+    .decor {
+        width: 3.5%;
+        height: 38.5%;
+        aspect-ratio: 1 / 11;
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .mask {
+        width: 20.5%;
+        height: 22.6%;
+        aspect-ratio: 57 / 79;
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        top: 33.5%;
+        left: -11%;
+    }
+
+    .content {
+        @include mixins.screen(lg) {
+            margin-left: 15px;
+        }
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+    }
+
+    &-desc {
+        margin: 18px 0 28px;
+
+        @include mixins.screen(lg) {
+            margin: 12px 0 20px;
+        }
+    }
+
+    .list {
+        color: $dark;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        list-style: disc;
+        margin-left: 16px;
+
+        @include mixins.screen(lg) {
+            font-size: 1.4rem;
+            gap: 8px;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.features-2 {
+    padding: 150px 0;
+    background: $white;
+
+    @include mixins.screen(xl) {
+        padding: 120px 0;
+    }
+
+    @include mixins.screen(md) {
+        padding: 90px 0;
+    }
+
+    @include mixins.screen(sm) {
+        padding: 50px 0 40px;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    .media {
+        position: relative;
+        border: 1px solid black;
+
+        @include mixins.screen(xxl) {
+            margin-left: 7%;
+        }
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+        vertical-align: bottom;
+    }
+
+    .decor {
+        width: 3.5%;
+        height: 38.5%;
+        aspect-ratio: 1 / 11;
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .mask {
+        width: 22.8%;
+        height: 16.3%;
+        aspect-ratio: 130 / 93;
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        top: 47%;
+        left: -11.4%;
+    }
+
+    .content {
+        @include mixins.screen(lg) {
+            margin-left: 15px;
+        }
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+    }
+
+    &-desc {
+        margin: 18px 0 28px;
+        max-width: 470px;
+
+        @include mixins.screen(lg) {
+            margin: 12px 0 20px;
+        }
+    }
+}
+
+/* ========== Testimonial ========== */
+
+.testimonial {
+    padding-top: 150px;
+
+    @include mixins.screen(xl) {
+        padding-top: 100px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 80px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 50px;
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+        max-width: 469px;
+
+        @include mixins.screen(lg) {
+            max-width: 335px;
+        }
+
+        @include mixins.screen(sm) {
+            max-width: 300px;
+        }
+    }
+
+    &-body {
+        margin-top: 70px;
+
+        @include mixins.screen(xl) {
+            margin-top: 60px;
+        }
+
+        @include mixins.screen(md) {
+            margin-top: 50px;
+        }
+
+        @include mixins.screen(sm) {
+            margin-top: 40px;
+        }
+    }
+
+    .card {
+        padding: 30px;
+        box-shadow: 0px 20px 70px 0px rgba(14, 20, 18, 0.07);
+
+        @include mixins.screen(sm) {
+            padding: 27px;
+        }
+    }
+
+    .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .review {
+        margin-top: 30px;
+        line-height: 1.67;
+
+        @include mixins.screen(sm) {
+            margin-top: 27px;
+            font-size: 1.6rem;
+        }
+    }
+
+    .icon {
+        width: 27px;
+        height: 24px;
+        object-fit: cover;
+        object-position: center;
+        margin-top: 30px;
+        margin-bottom: 12px;
+    }
+
+    .author {
+        font-size: 2rem;
+        color: $dark;
+        line-height: 1.5;
+        font-weight: 700;
+    }
+
+    .author-job {
+        font-size: 1.4rem;
+        line-height: 1.71;
+    }
+
+    .dot-wrapper {
+        margin-top: 55px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        @include mixins.screen(md) {
+            display: none;
+        }
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $dark;
+
+        &.dot-active {
+            background: $orange;
+        }
+    }
+}
+
+/* ========== FAQ ========== */
+
+.faq {
+    padding-top: 150px;
+
+    @include mixins.screen(xl) {
+        padding-top: 100px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 70px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 50px;
+    }
+
+    &-inner {
+        max-width: 770px;
+        margin: 0 auto;
+    }
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+        margin-bottom: 18px;
+
+        @include mixins.screen(sm) {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .question-label-wrapper {
+        display: flex;
+        gap: 30px;
+        color: $dark;
+        font-weight: 600;
+
+        @include mixins.screen(xl) {
+            font-size: 1.6rem;
+        }
+
+        @include mixins.screen(lg) {
+            font-size: 1.5rem;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 1rem;
+            line-height: 1.7;
+            gap: 22px;
+        }
+
+        .label-active {
+            color: $orange;
+        }
+    }
+
+    &-item {
+        box-shadow: 0px 20px 70px 0px rgba(14, 20, 18, 0.07);
+        padding: 30px;
+        position: relative;
+
+        @include mixins.screen(sm) {
+            padding: 13px;
+        }
+    }
+
+    &-item:not(:last-child) {
+        border-bottom: 1px solid $light-grey;
+    }
+
+    &-list {
+        margin-top: 70px;
+
+        @include mixins.screen(md) {
+            margin-top: 60px;
+        }
+
+        @include mixins.screen(sm) {
+            margin-top: 40px;
+        }
+    }
+
+    .question {
+        font-weight: 700;
+        color: $dark;
+        line-height: 1.45;
+        font-size: 2.2rem;
+
+        @include mixins.screen(xl) {
+            font-size: 2rem;
+        }
+
+        @include mixins.screen(lg) {
+            font-size: 1.6rem;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+    }
+
+    .answer {
+        line-height: 1.67;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.6s ease-in-out;
+
+        @include mixins.screen(sm) {
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+    }
+}
+
+/* ========== Blog ========== */
+
+.blog {
+    padding: 150px 0;
+    @include mixins.screen(md) {
+        position: relative;
+    }
+
+    @include mixins.screen(xl) {
+        padding: 100px 0;
+    }
+
+    @include mixins.screen(md) {
+        padding: 80px 0 150px;
+    }
+
+    @include mixins.screen(sm) {
+        padding: 50px 0 80px;
+    }
+
+    &-header {
+        position: relative;
+
+        @include mixins.screen(md) {
+            position: static;
+        }
+    }
+
+    &-heading {
+        color: $dark;
+        margin-top: 6px;
+    }
+
+    &-desc {
+        margin-top: 18px;
+        max-width: 470px;
+
+        @include mixins.screen(lg) {
+            margin-top: 10px;
+        }
+
+        @include mixins.screen(md) {
+            margin-top: 15px;
+        }
+    }
+
+    &-body {
+        margin-top: 70px;
+
+        @include mixins.screen(xl) {
+            margin-top: 60px;
+        }
+
+        @include mixins.screen(md) {
+            margin-top: 50px;
+        }
+
+        @include mixins.screen(sm) {
+            margin-top: 40px;
+        }
+    }
+
+    &-item {
+        position: relative;
+    }
+
+    &-thumb-wrapper {
+        display: block;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+    }
+
+    &-thumb {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        transition-property: opacity, transform;
+        transition-duration: 0.4s;
+        transition-timing-function: ease-in-out;
+
+        &:hover {
+            opacity: 0.8;
+            transform: scale3D(1.1, 1.1, 1);
+        }
+    }
+
+    &-item-info {
+        margin-top: 20px;
+    }
+
+    &-author {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .author-avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .author-name {
+        color: $dark;
+        font-weight: 600;
+        line-height: 1.67;
+    }
+
+    .author-job {
+        font-size: 1.6rem;
+        line-height: 1.75;
+    }
+
+    &-title {
+        margin-top: 20px;
+        margin-bottom: 12px;
+        font-size: 2.2rem;
+        color: $dark;
+        line-height: 1.45;
+        transition: color 0.3s ease-in-out;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    .learn-more-link {
+        font-weight: 600;
+        line-height: 1.67;
+        color: $dark;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+}

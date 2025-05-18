@@ -1,0 +1,56 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.cta {
+    color: $white;
+    background: $green;
+    padding: 100px 0;
+    line-height: 1.67;
+
+    @include mixins.screen(xl) {
+        font-size: 1.6rem;
+        padding: 70px 0;
+    }
+    @include mixins.screen(md) {
+        font-size: 1.4rem;
+        padding: 50px 0;
+    }
+    @include mixins.screen(sm) {
+        font-size: 1rem;
+        line-height: 1.7;
+        padding: 40px 0;
+    }
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-heading {
+        margin-top: 6px;
+
+        @include mixins.screen(sm) {
+            margin-top: 0;
+        }
+    }
+    .desc {
+        max-width: 470px;
+        margin: 18px 0 38px;
+        text-align: center;
+
+        @include mixins.screen(lg) {
+            max-width: 410px;
+        }
+
+        @include mixins.screen(md) {
+            max-width: 330px;
+            margin: 14px 0 30px;
+        }
+
+        @include mixins.screen(sm) {
+            max-width: 276px;
+            margin: 12px 0 24px;
+        }
+    }
+}

@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-</head>
-<body>
-    <%- include("./partials/header.ejs") %>
-    <h1>About</h1>
-    <%- include %>
-    <script type="module" src="./main.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About</title>
+        <%- include("./partials/head.ejs") %>
+    </head>
+    <body>
+        <div class="about-wrapper">
+            <!-- Header -->
+            <%- include("./partials/header.ejs") %>
+            <main class="main">
+                <!-- Start Hero -->
+                <section class="about-hero">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="about-hero-inner">
+                                    <p class="sub-heading hero-sub-heading">
+                                        #1 Law Firm in New York
+                                    </p>
+                                    <h1 class="page-heading">
+                                        Where The Experience To Guide You
+                                    </h1>
+                                    <p class="desc hero-desc">
+                                        A law firm with deep expertise in New
+                                        Jersey residential & investment property
+                                        transactions and many other things.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End Hero -->
+                <!-- Teams -->
+                <%- include("./partials/teams.ejs") %>
+                <!-- Awards -->
+                <%- include("./partials/awards.ejs") %>
+                <!-- CTA -->
+                <%- include("./partials/cta.ejs") %>
+            </main>
+            <!-- Footer -->
+            <%- include("./partials/footer.ejs") %>
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
 </html>

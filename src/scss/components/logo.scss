@@ -1,0 +1,52 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.logo-wrapper {
+    max-width: 84px;
+    height: 67px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    width: 31px;
+    height: 31px;
+    object-fit: cover;
+}
+
+.brand-identity {
+    color: $dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 32px;
+
+    .name {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 0.6;
+    }
+
+    .tagline {
+        font-size: 1.4rem;
+        line-height: 1;
+    }
+}
+
+// header================
+
+.header-logo {
+    @include mixins.screen(lg) {
+        display: none;
+    }
+}
+
+// footer================
+
+.footer-logo {
+    .brand-identity {
+        color: $white;
+    }
+}

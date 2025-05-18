@@ -1,0 +1,72 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.about-hero {
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sub-heading {
+        color: $dark;
+    }
+
+    padding-top: 73px;
+    padding-bottom: 100px;
+    background: $yellow-light;
+
+    @include mixins.screen(xl) {
+        padding-top: 60px;
+        padding-bottom: 70px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 42px;
+        padding-bottom: 40px;
+    }
+
+    .page-heading {
+        font-family: $roboto-slab-font;
+        color: $dark;
+        font-weight: 800;
+        font-size: 6rem;
+        line-height: 1.17;
+        margin-top: 12px;
+
+        @include mixins.screen(xxl) {
+            font-size: 5.2rem;
+            max-width: 500px;
+        }
+        @include mixins.screen(xl) {
+            font-size: 4.2rem;
+            max-width: 350px;
+        }
+
+        @include mixins.screen(lg) {
+            font-size: 4.2rem;
+            max-width: 450px;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 3.5rem;
+            max-width: 335px;
+            margin-top: 6px;
+        }
+    }
+    &-desc {
+        margin-top: 18px;
+
+        @include mixins.screen(xl) {
+            margin-top: 14px;
+        }
+        @include mixins.screen(sm) {
+            margin-top: 9px;
+        }
+    }
+}

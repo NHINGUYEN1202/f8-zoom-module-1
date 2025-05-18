@@ -1,0 +1,104 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.footer {
+    background: $dark;
+    color: $grayish-light;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.75;
+    padding-top: 100px;
+    padding-bottom: 28px;
+
+    @include mixins.screen(lg) {
+        padding-top: 50px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 30px;
+        padding-bottom: 31px;
+    }
+    .row {
+        @include mixins.screen(xl) {
+            --grid-gutter-y: 20px;
+        }
+    }
+
+    .top {
+        padding-bottom: 55px;
+        border-bottom: 1px solid $border-ft;
+
+        @include mixins.screen(lg) {
+            padding-bottom: 40px;
+        }
+
+        @include mixins.screen(sm) {
+            padding-bottom: 20px;
+        }
+    }
+
+    .heading {
+        color: $white;
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+
+    .list {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .item {
+        white-space: nowrap;
+    }
+
+    .contact {
+        margin-top: 24px;
+    }
+
+    .map {
+        width: 100%;
+        min-height: 268px;
+    }
+
+    .bottom {
+        margin-top: 28px;
+        display: flex;
+        justify-content: space-between;
+
+        @include mixins.screen(sm) {
+            margin-top: 20px;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .copyright {
+            font-size: 1.4rem;
+            line-height: 1.7;
+            margin-top: 12px;
+
+            @include mixins.screen(sm) {
+                margin-top: 20px;
+            }
+        }
+        .right {
+            align-self: flex-end;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+
+            @include mixins.screen(sm) {
+                align-self: flex-start;
+            }
+        }
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
