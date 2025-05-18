@@ -84,7 +84,6 @@ select {
 }
 
 .container {
-    border: 1px solid red;
     @include mixins.screen(sm) {
         padding-left: 20px;
         padding-right: 20px;
