@@ -1,0 +1,71 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.practice-hero {
+    padding-top: 43px;
+    padding-bottom: 100px;
+    background: $yellow-light;
+
+    @include mixins.screen(xl) {
+        padding-top: 35px;
+        padding-bottom: 70px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 8px;
+        padding-bottom: 40px;
+    }
+
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    &-sub-heading {
+        color: $dark;
+    }
+
+    .practice-page-heading {
+        margin-top: 12px;
+        max-width: 670px;
+
+        @include mixins.screen(xl) {
+            max-width: 500px;
+        }
+
+        @include mixins.screen(sm) {
+            margin-top: 6px;
+            max-width: 400px;
+        }
+    }
+
+    &-desc {
+        margin-top: 18px;
+        max-width: 670px;
+        color: $dark;
+        line-height: 1.67;
+
+        @include mixins.screen(xl) {
+            margin-top: 14px;
+            max-width: 500px;
+        }
+
+        @include mixins.screen(sm) {
+            margin-top: 9px;
+            max-width: 400px;
+        }
+    }
+}
+
+.practice-wrapper {
+    .practice-btn-none {
+        display: none;
+    }
+}

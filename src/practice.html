@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Practice</title>
+        <%- include("./partials/head.ejs") %>
+    </head>
+    <body>
+        <div class="practice-wrapper">
+            <!-- Header -->
+            <%- include("./partials/header.ejs") %>
+            <main>
+                <!-- Start Hero -->
+                <section class="practice-hero">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="practice-hero-inner">
+                                    <p
+                                        class="sub-heading practice-hero-sub-heading"
+                                    >
+                                        #Practice Areas
+                                    </p>
+                                    <h1 class="practice-page-heading">
+                                        Our Practice Areas to Serve You
+                                    </h1>
+                                    <p class="desc practice-hero-desc">
+                                        Where every injury is personal. We are a
+                                        different kind of law firm. Let our
+                                        small, passionate group of trial lawyers
+                                        fight for your rights!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End Hero -->
+                <!-- Services -->
+                <%- include("./partials/services-practice.ejs") %>
+                <!-- CTA -->
+                <%- include("./partials/cta.ejs") %>
+            </main>
+            <!-- Footer -->
+            <%- include("./partials/footer.ejs") %>
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>

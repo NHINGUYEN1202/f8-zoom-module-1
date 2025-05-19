@@ -5,6 +5,7 @@
 // Layout
 @use "./layout/grid";
 @use "./layout/header";
+@use "./layout/services-practice";
 @use "./layout/teams";
 @use "./layout/awards";
 @use "./layout/cta";
@@ -20,6 +21,7 @@
 @use "./pages/home.scss";
 @use "./pages/about.scss";
 @use "./pages/blog.scss";
+@use "./pages/practice.scss";
 
 // Common
 
