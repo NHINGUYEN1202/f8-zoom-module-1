@@ -24,6 +24,7 @@ export default defineConfig({
                 about: path.resolve(__dirname, "src/about.html"),
                 blog: path.resolve(__dirname, "src/blog.html"),
                 practice: path.resolve(__dirname, "src/practice.html"),
+                contact: path.resolve(__dirname, "src/contact.html"),
 
                 // Thêm trang khác nếu có
             },
