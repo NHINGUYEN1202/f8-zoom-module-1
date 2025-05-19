@@ -6,6 +6,9 @@
     color: $dark;
     padding: 30px 0;
     font-size: 1.6rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     @include mixins.screen(md) {
         padding: 15px 0;
@@ -111,6 +114,7 @@
 
         &:hover {
             color: $orange;
+            font-weight: 600;
         }
 
         &:hover .submenu {
