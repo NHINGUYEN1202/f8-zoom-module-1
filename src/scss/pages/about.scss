@@ -2,22 +2,22 @@
 @use "../mixins.scss";
 
 .about-hero {
-    padding-top: 73px;
+    padding-top: 43px;
     padding-bottom: 100px;
     background: $yellow-light;
 
     @include mixins.screen(xl) {
-        padding-top: 60px;
+        padding-top: 35px;
         padding-bottom: 70px;
     }
 
     @include mixins.screen(md) {
-        padding-top: 50px;
+        padding-top: 20px;
         padding-bottom: 50px;
     }
 
     @include mixins.screen(sm) {
-        padding-top: 42px;
+        padding-top: 8px;
         padding-bottom: 40px;
     }
 
@@ -32,29 +32,15 @@
         color: $dark;
     }
 
-    &-page-heading {
-        font-family: $roboto-slab-font;
-        color: $dark;
-        font-weight: 800;
-        font-size: 6rem;
-        line-height: 1.17;
+    .about-page-heading {
         margin-top: 12px;
         max-width: 670px;
 
-        @include mixins.screen(xxl) {
-            font-size: 5.2rem;
-        }
         @include mixins.screen(xl) {
-            font-size: 4.2rem;
             max-width: 600px;
         }
 
-        @include mixins.screen(lg) {
-            font-size: 4.2rem;
-        }
-
         @include mixins.screen(sm) {
-            font-size: 3.5rem;
             margin-top: 6px;
         }
     }

@@ -233,3 +233,18 @@
         transform: translateX(50%);
     }
 }
+
+.regular-blog-btn {
+    min-width: 160px;
+    margin-top: 55px;
+    margin-left: 50%;
+    transform: translate(-50%);
+
+    @include mixins.screen(lg) {
+        margin-top: 45px;
+    }
+
+    @include mixins.screen(sm) {
+        margin-top: 40px;
+    }
+}

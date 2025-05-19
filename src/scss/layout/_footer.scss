@@ -39,6 +39,7 @@
 
     .heading {
         color: $white;
+        font-weight: 700;
         font-size: 2rem;
         line-height: 1.5;
     }
@@ -53,6 +54,11 @@
 
     .item {
         white-space: nowrap;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: $orange;
+        }
     }
 
     .contact {

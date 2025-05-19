@@ -4,27 +4,27 @@
 /* ========== Hero ========== */
 
 .hero {
-    padding-top: 145px;
+    padding-top: 115px;
     padding-bottom: 141px;
     background: $yellow-light;
 
     @include mixins.screen(xl) {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 90px;
+        padding-bottom: 120px;
     }
 
     @include mixins.screen(lg) {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 70px;
+        padding-bottom: 90px;
     }
 
     @include mixins.screen(md) {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 60px;
     }
 
     @include mixins.screen(sm) {
-        padding-top: 32px;
+        padding-top: 20px;
         padding-bottom: 30px;
     }
 
@@ -37,34 +37,26 @@
         color: $dark;
     }
 
-    .page-heading {
-        font-family: $roboto-slab-font;
-        color: $dark;
-        font-weight: 800;
-        font-size: 6rem;
-        line-height: 1.17;
+    .home-page-heading {
         margin-top: 12px;
 
         @include mixins.screen(xxl) {
-            font-size: 5.2rem;
             max-width: 500px;
         }
         @include mixins.screen(xl) {
-            font-size: 4.2rem;
             max-width: 350px;
         }
 
         @include mixins.screen(lg) {
-            font-size: 4.2rem;
             max-width: 450px;
         }
 
         @include mixins.screen(sm) {
-            font-size: 3.5rem;
-            max-width: 335px;
+            max-width: 100%;
             margin-top: 10px;
         }
     }
+
     &-desc {
         max-width: 470px;
         margin-top: 18px;
@@ -74,10 +66,14 @@
             max-width: 380px;
             margin-bottom: 28px;
         }
+        @include mixins.screen(md) {
+            max-width: 430px;
+        }
+
         @include mixins.screen(sm) {
             margin-top: 10px;
             margin-bottom: 15px;
-            max-width: 276px;
+            max-width: 370px;
         }
     }
     .media {
@@ -384,6 +380,7 @@
 
         background: $white;
         color: $dark;
+        font-weight: 700;
         position: absolute;
         bottom: 20px;
         left: 50%;
@@ -844,15 +841,13 @@
 
 .blog {
     padding: 150px 0;
-    @include mixins.screen(md) {
-        position: relative;
-    }
 
     @include mixins.screen(xl) {
         padding: 100px 0;
     }
 
     @include mixins.screen(md) {
+        position: relative;
         padding: 80px 0 150px;
     }
 
@@ -916,7 +911,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
         transition-property: opacity, transform;
         transition-duration: 0.4s;
@@ -961,6 +956,7 @@
         margin-top: 20px;
         margin-bottom: 12px;
         font-size: 2.2rem;
+        font-weight: 700;
         color: $dark;
         line-height: 1.45;
         transition: color 0.3s ease-in-out;
