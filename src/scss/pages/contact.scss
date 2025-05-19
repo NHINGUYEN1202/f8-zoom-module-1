@@ -1,2 +1,133 @@
 @use "../variables" as *;
 @use "../mixins.scss";
+
+.contact-us {
+    padding-top: 100px;
+    padding-bottom: 150px;
+
+    .row {
+        --grid-gutter-y: 24px;
+
+        @include mixins.screen(lg) {
+            --grid-gutter-x: 20px;
+            --grid-gutter-y: 20px;
+        }
+    }
+
+    @include mixins.screen(xl) {
+        padding-top: 70px;
+        padding-bottom: 100px;
+    }
+
+    @include mixins.screen(md) {
+        padding-top: 50px;
+        padding-bottom: 70px;
+    }
+
+    @include mixins.screen(sm) {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    &-sub-heading {
+        line-height: 1.67;
+        font-weight: 500;
+
+        @include mixins.screen(xl) {
+            font-size: 1.5rem;
+        }
+
+        @include mixins.screen(md) {
+            font-size: 1.3rem;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    }
+
+    &-heading {
+        font-size: 4.2rem;
+        font-weight: 700;
+        line-height: 1.24;
+        max-width: 670px;
+        margin-top: 12px;
+
+        @include mixins.screen(xl) {
+            font-size: 3.6rem;
+            max-width: 550px;
+        }
+
+        @include mixins.screen(md) {
+            font-size: 2.8rem;
+            max-width: 430px;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 2.1rem;
+            margin-top: 5px;
+            max-width: 335px;
+        }
+    }
+
+    &-desc {
+        font-family: $dm-sans-font;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: -0.16px;
+        max-width: 530px;
+        margin-top: 20px;
+        margin-bottom: 70px;
+
+        @include mixins.screen(lg) {
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        @include mixins.screen(md) {
+            font-size: 1.2rem;
+            max-width: 410px;
+        }
+
+        @include mixins.screen(sm) {
+            font-size: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
+            letter-spacing: -0.1px;
+            margin-top: 10.5px;
+            margin-bottom: 30.5px;
+            max-width: 335px;
+        }
+    }
+
+    .form-input {
+        width: 100%;
+        display: block;
+        padding: 18px 31px;
+        background: $bg-input;
+        color: $dark;
+    }
+
+    .form-input::placeholder {
+        font-size: 1.4rem;
+        line-height: 1.71;
+    }
+
+    .form-text-area {
+        width: 100%;
+        min-height: 150px;
+        display: block;
+        resize: none;
+        padding: 20px 31px;
+        background: $bg-input;
+        color: $dark;
+    }
+
+    .form-text-area::placeholder {
+        font-size: 1.4rem;
+        line-height: 1.71;
+    }
+}

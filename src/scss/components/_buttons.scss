@@ -248,3 +248,28 @@
         margin-top: 40px;
     }
 }
+
+.contact-submit-btn {
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75;
+    background: $dark;
+    color: $white;
+    padding: 17px 30px;
+    border-radius: 31px;
+    margin-top: 40px;
+    transition: background-color 0.3s ease-in-out;
+
+    @include mixins.screen(lg) {
+        margin-top: 35px;
+    }
+
+    @include mixins.screen(sm) {
+        margin-top: 30px;
+    }
+
+    &:hover {
+        background: $orange;
+    }
+}

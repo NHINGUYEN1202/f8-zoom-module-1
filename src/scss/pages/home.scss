@@ -321,7 +321,6 @@
 
     .media {
         position: relative;
-        border: 1px solid black;
 
         @include mixins.screen(xxl) {
             margin-left: 7%;
@@ -422,7 +421,6 @@
 
     .media {
         position: relative;
-        border: 1px solid black;
 
         @include mixins.screen(xxl) {
             margin-left: 7%;

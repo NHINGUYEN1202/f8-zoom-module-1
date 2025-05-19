@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact</title>
+        <%- include("./partials/head.ejs") %>
+    </head>
+    <body>
+        <div class="contact-wrapper">
+            <!-- Header -->
+            <%- include("./partials/header.ejs") %>
+            <main>
+                <section class="contact-us">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="contact-us-header">
+                                    <p class="contact-us-sub-heading">
+                                        Contact us
+                                    </p>
+                                    <h1 class="contact-us-heading">
+                                        We Are Always Ready To Hear For You.
+                                    </h1>
+                                    <p class="contact-us-desc">
+                                        The right move at the right time saves
+                                        your investment. live the dream of
+                                        expanding your business.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form action="#!" class="contact-us-form">
+                            <div class="row">
+                                <div class="col-6 col-lg-12">
+                                    <input
+                                        type="text"
+                                        class="form-input"
+                                        spellcheck="false"
+                                        placeholder="Enter your name"
+                                    />
+                                </div>
+                                <div class="col-6 col-lg-12">
+                                    <input
+                                        type="text"
+                                        class="form-input"
+                                        spellcheck="false"
+                                        placeholder="Comapy (optioanl)"
+                                    />
+                                </div>
+                                <div class="col-6 col-lg-12">
+                                    <input
+                                        type="email"
+                                        class="form-input"
+                                        spellcheck="false"
+                                        placeholder="Your email"
+                                    />
+                                </div>
+                                <div class="col-6 col-lg-12">
+                                    <input
+                                        type="tel"
+                                        class="form-input"
+                                        placeholder="Phone number"
+                                    />
+                                </div>
+                                <div class="col-12">
+                                    <textarea
+                                        class="form-text-area"
+                                        placeholder="Tell us about yourself"
+                                    ></textarea>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="contact-submit-btn"
+                                >
+                                    Contact us
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
+            <!-- Footer -->
+            <%- include("./partials/footer.ejs") %>
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>
