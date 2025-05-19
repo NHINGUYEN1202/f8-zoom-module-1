@@ -661,6 +661,15 @@
         .label-active {
             color: $orange;
         }
+
+        .question-label {
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $orange;
+            }
+        }
     }
 
     &-item {
